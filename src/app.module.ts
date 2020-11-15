@@ -22,7 +22,7 @@ import { ConfigModule } from '@nestjs/config';
     UsersModule
   ],
   controllers: [AppController],
-  providers: [AppService, UsersService],
+  providers: [AppService],
 })
 
 export class AppModule { }

@@ -1,6 +1,8 @@
 import { MainEntity } from "src/common/entities/main.entities";
 import { BeforeInsert, Column, Entity, Index } from "typeorm";
 import * as bcrypt from 'bcrypt'
+import { Exclude } from "class-transformer";
+
 
 @Entity()
 export class User extends MainEntity {
@@ -9,11 +11,12 @@ export class User extends MainEntity {
   @Column({ unique: true })
   email: string;
 
-  @Column()
+  @Column({ select: false })
+  @Exclude()
   password: string;
 
   @BeforeInsert()
-  async hashPassword() {
+  private async hashPassword() {
     if (this.password) {
       this.password = await bcrypt.hash(this.password, Number(process.env.HASH_SALT))
     }
