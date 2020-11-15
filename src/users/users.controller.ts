@@ -7,7 +7,7 @@ import { UsersService } from './users.service';
 export class UsersController {
   constructor(private readonly usersService: UsersService) { }
 
-  @UseInterceptors(ClassSerializerInterceptor)
+  @UseInterceptors(ClassSerializerInterceptor) // Class transformer to intercept and transform the data of user (see password in user entity)
   @Post()
   createUser(@Body() createUserDto: CreateUserDto): Promise<User> {
     try {
