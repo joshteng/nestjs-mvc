@@ -10,10 +10,6 @@ export class UsersController {
   @UseInterceptors(ClassSerializerInterceptor) // Class transformer to intercept and transform the data of user (see password in user entity)
   @Post()
   createUser(@Body() createUserDto: CreateUserDto): Promise<User> {
-    try {
-      return this.usersService.createUser(createUserDto)
-    } catch (err) {
-      console.log(err)
-    }
+    return this.usersService.createUser(createUserDto)
   }
 }

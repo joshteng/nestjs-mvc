@@ -12,7 +12,7 @@ export class UsersService {
   ) { }
 
   createUser(createUserDto: CreateUserDto): Promise<User> {
-    let user = this.userRepository.create(createUserDto)
+    const user = this.userRepository.create(createUserDto)
     return this.userRepository.save(user)
   }
 }
