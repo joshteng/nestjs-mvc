@@ -7,7 +7,7 @@ export class AppController {
 
   @Get()
   @Render('public/home')
-  getHello(): object {
+  homepage(): object {
     return null
   }
 
