@@ -10,4 +10,12 @@ export class AppController {
   getHello(): object {
     return this.appService.getHello();
   }
+
+  @Get('sign_up')
+  @Render('users/new')
+  signUp(): object {
+    return {
+      "page_title": "Sign Up"
+    }
+  }
 }
