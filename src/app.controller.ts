@@ -8,7 +8,7 @@ export class AppController {
   @Get()
   @Render('public/home')
   getHello(): object {
-    return this.appService.getHello();
+    return null
   }
 
   @Get('sign_up')
