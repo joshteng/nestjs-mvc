@@ -12,7 +12,6 @@ export class User extends MainEntity {
   email: string;
 
   @Column({ select: false })
-  @Exclude()
   password: string;
 
   @BeforeInsert()
