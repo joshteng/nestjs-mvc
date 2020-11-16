@@ -9,5 +9,5 @@ import { User } from "src/users/entities/user.entity";
 // }
 
 export function toUserDto(user: User): UserDto {
-  return plainToClass(UserDto, user)
+  return plainToClass(UserDto, user, { excludeExtraneousValues: true })
 }

@@ -1,14 +1,21 @@
-import { Exclude } from "class-transformer";
-import { IsEmail, IsNotEmpty } from "class-validator";
+import { Exclude, Expose } from "class-transformer";
+import { IsDate, IsEmail, IsNotEmpty, IsString } from "class-validator";
 
 export class UserDto {
+  @Expose()
   @IsNotEmpty()
   readonly id: Number;
 
+  @Expose()
   @IsNotEmpty()
   @IsEmail()
   readonly email: string;
 
-  @Exclude()
-  readonly password: string;
+  @Expose()
+  @IsDate()
+  readonly created_at: Date;
+
+  @Expose()
+  @IsDate()
+  readonly updated_at: Date;
 }
