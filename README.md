@@ -4,7 +4,7 @@ To Do:
   - duplicate email
 3. User can login
 4. User automatically logged in after creation
-5. CSRF to forms
+5. CSRF to forms https://expressjs.com/en/resources/middleware/csurf.html
 
 1. User can add accounts
 1. User can send portfolio value data to endpoint
