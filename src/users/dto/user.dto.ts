@@ -1,5 +1,5 @@
-import { Exclude, Expose } from "class-transformer";
-import { IsDate, IsEmail, IsNotEmpty, IsString } from "class-validator";
+import { Expose } from "class-transformer";
+import { IsDate, IsEmail, IsNotEmpty } from "class-validator";
 
 export class UserDto {
   @Expose()

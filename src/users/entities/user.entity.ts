@@ -1,7 +1,6 @@
 import { MainEntity } from "src/common/entities/main.entities";
 import { BeforeInsert, Column, Entity, Index } from "typeorm";
 import * as bcrypt from 'bcrypt'
-import { Exclude } from "class-transformer";
 
 
 @Entity()
