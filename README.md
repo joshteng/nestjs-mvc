@@ -1,6 +1,7 @@
 Setup:
-- [x] Set up MVC
+- [x] Set up MVC (using Pug)
 - [x] Set up NestJS Config (.env)
+- [x] Set up TypeORM
 - [x] Set up validation pipeline & class-transformer & class-validator
 - [ ] Set up express-session
 - [ ] CSRF to forms https://expressjs.com/en/resources/middleware/csurf.html
