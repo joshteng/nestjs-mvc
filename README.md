@@ -1,3 +1,5 @@
+Just a simple learning project
+
 Setup:
 - [x] Set up MVC (using Pug)
 - [x] Set up NestJS Config (.env)
