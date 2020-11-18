@@ -1,6 +1,6 @@
+import { hash } from "bcrypt";
 import { MainEntity } from "src/common/entities/main.entities";
 import { BeforeInsert, Column, Entity, Index } from "typeorm";
-import * as bcrypt from 'bcrypt'
 
 
 @Entity()
@@ -16,7 +16,7 @@ export class User extends MainEntity {
   @BeforeInsert()
   private async hashPassword() {
     if (this.password) {
-      this.password = await bcrypt.hash(this.password, Number(process.env.HASH_SALT))
+      this.password = await hash(this.password, 10)
     }
   }
 }

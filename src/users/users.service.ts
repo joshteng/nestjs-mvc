@@ -13,6 +13,16 @@ export class UsersService {
     private readonly userRepository: Repository<User>,
   ) { }
 
+  async findUserByEmail(email): Promise<any> {
+    const user = await this.userRepository.find({
+      where: {
+        email: email
+      }
+    })
+
+    return user
+  }
+
   async createUser(createUserDto: CreateUserDto): Promise<UserDto> {
     const user = await this.userRepository.create(createUserDto)
     await this.userRepository.save(user)
