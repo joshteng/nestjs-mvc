@@ -10,7 +10,7 @@ export class User extends MainEntity {
   @Column({ unique: true })
   email: string;
 
-  @Column({ select: false })
+  @Column()
   password: string;
 
   @BeforeInsert()

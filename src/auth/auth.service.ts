@@ -10,7 +10,7 @@ export class AuthService {
   async validateUser(email, password): Promise<any> {
     const user = await this.usersService.findUserByEmail(email)
 
-    if (user && this.isCorrectPassword(password, user)) {
+    if (user && await this.isCorrectPassword(user, password)) {
       return user
     }
 
@@ -18,6 +18,7 @@ export class AuthService {
   }
 
   async isCorrectPassword(user: User, password: string): Promise<boolean> {
-    return await compare(password, user.password)
+    const result = await compare(password, user.password)
+    return result
   }
 }
