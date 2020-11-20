@@ -4,6 +4,7 @@ block content
   h1 Login
 
   form(action='/login' method='POST')
+    input(type="hidden", name="_csrf" value=csrfToken)
     .form-group
       label() Email address
       input.form-control(name="email" type='email' aria-describedby='emailHelp')

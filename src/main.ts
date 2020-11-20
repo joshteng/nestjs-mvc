@@ -7,7 +7,8 @@ import { AppModule } from './app.module';
 import * as session from 'express-session';
 import flash = require('connect-flash');
 import * as passport from 'passport';
-
+import * as csurf from 'csurf';
+import * as bodyParser from 'body-parser';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -19,7 +20,7 @@ async function bootstrap() {
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true, // remove non whitelisted keys
-      forbidNonWhitelisted: true, // only keys that are defined in DTO will be allowed or reject request completely
+      forbidNonWhitelisted: false, // only keys that are defined in DTO will be allowed or reject request completely
       transform: true, // tranform Body, Params of a request to an instance of our DTO class rather than plain JS object
       transformOptions: {
         enableImplicitConversion: true
@@ -34,6 +35,10 @@ async function bootstrap() {
       saveUninitialized: false
     })
   )
+
+  // for form CSRF
+  app.use(bodyParser.urlencoded({ extended: false }))
+  app.use(csurf());
 
   app.use(passport.initialize());
   app.use(passport.session());

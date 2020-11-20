@@ -16,9 +16,10 @@ export class AppController {
 
   @Get('sign-up')
   @Render('users/new')
-  signUp(): object {
+  signUp(@Request() req): object {
     return {
-      "page_title": "Sign Up"
+      csrfToken: req.csrfToken(),
+      pageTitle: "Sign Up"
     }
   }
 
@@ -26,15 +27,16 @@ export class AppController {
   @Render('public/login')
   loginPage(@Request() req) {
     return {
-      "page_title": "Login",
-      "flash_message": req.flash('alert')[0]
+      csrfToken: req.csrfToken(),
+      pageTitle: "Login",
+      flashMessage: req.flash('alert')[0]
     }
   }
 
   @UseGuards(LoginGuard)
   @UseFilters(LoginFailedExceptionFilter)
   @Post('/login')
-  login(@Request() req, @Res() res: Response) {
+  login(@Request() req, @Res() res: Response, csrfProtection) {
     res.redirect(`/users/${req.user.id}`);
   }
 

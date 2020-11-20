@@ -6,7 +6,7 @@ Setup:
 - [x] Set up TypeORM
 - [x] Set up validation pipeline & class-transformer & class-validator
 - [x] Set up express-session
-- [ ] CSRF to forms https://expressjs.com/en/resources/middleware/csurf.html
+- [x] CSRF to forms https://expressjs.com/en/resources/middleware/csurf.html
 
 To Do:
 - [x] User can sign up with basic validation

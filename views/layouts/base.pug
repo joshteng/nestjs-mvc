@@ -2,16 +2,16 @@ html
   head
     meta(charset='utf-8')
     title
-      if page_title
-        | #{page_title} | NestJS MVC
+      if pageTitle
+        | #{pageTitle} | NestJS MVC
       else
         | NestJS MVC
     link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css' integrity='sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2' crossorigin='anonymous')
     block head
   body
     .container
-      if flash_message
-        .alert.alert-primary #{flash_message}
+      if flashMessage
+        .alert.alert-primary #{flashMessage}
       block content
       block footer
 

@@ -12,7 +12,11 @@ export class SignUpFailedException implements ExceptionFilter {
     if (
       exception instanceof BadRequestException
     ) {
-      response.render('users/new', { validation_errors: res['message'], flash_message: "Something went wrong. Please try again!" })
+      response.render('users/new', {
+        csrfToken: request['csrfToken'](),
+        validationErrors: res['message'],
+        flashMessage: "Something went wrong. Please try again!"
+      })
     } else {
       response.redirect('/404')
     }
