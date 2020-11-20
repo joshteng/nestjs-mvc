@@ -5,7 +5,7 @@ Setup:
 - [x] Set up NestJS Config (.env)
 - [x] Set up TypeORM
 - [x] Set up validation pipeline & class-transformer & class-validator
-- [ ] Set up express-session
+- [x] Set up express-session
 - [ ] CSRF to forms https://expressjs.com/en/resources/middleware/csurf.html
 
 To Do:
@@ -15,7 +15,7 @@ To Do:
 - [x] User can login
 - [x] User automatically logged in after creation
 - [x] User can logout
-- [ ] Redirect if visiting authenticated routes
+- [x] Redirect if visiting authenticated routes
 - [ ] Render if failed to create user
 - [ ] Render if login failed
 

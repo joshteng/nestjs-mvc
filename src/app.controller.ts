@@ -23,9 +23,10 @@ export class AppController {
 
   @Get('login')
   @Render('public/login')
-  loginPage() {
+  loginPage(@Request() req) {
     return {
-      "page_title": "Login"
+      "page_title": "Login",
+      "flash_message": req.flash('alert')[0]
     }
   }
 

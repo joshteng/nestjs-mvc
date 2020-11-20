@@ -1,4 +1,5 @@
-import { Body, Controller, Get, Logger, Param, Post, Render, Request, Res, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Logger, Param, Post, Render, Request, Res, UseFilters, UseGuards } from '@nestjs/common';
+import { AuthExceptionFilter } from 'src/common/filters/auth-exceptions.filter';
 import { AuthenticatedGuard } from 'src/common/guards/authenticated.guard';
 import { toUserDto } from 'src/common/mapper';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -27,6 +28,7 @@ export class UsersController {
   }
 
   @UseGuards(AuthenticatedGuard)
+  @UseFilters(AuthExceptionFilter)
   @Get(':id')
   @Render('users/show')
   async profile(@Request() req, @Param() param) {

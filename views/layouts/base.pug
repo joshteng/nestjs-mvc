@@ -10,6 +10,8 @@ html
     block head
   body
     .container
+      if flash_message
+        .alert.alert-primary #{flash_message}
       block content
       block footer
 
