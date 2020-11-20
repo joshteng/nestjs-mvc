@@ -20,6 +20,7 @@ To Do:
 - [x] Render if failed to create user
 - [x] Render if login failed
 - [x] Use Interceptor to add flashMessages and csrfToken to every response
+- [ ] Testing
 
 Uncertainties:
 - Haven't decided where is the best place to implement mappers a.k.a. `toUserDto`
