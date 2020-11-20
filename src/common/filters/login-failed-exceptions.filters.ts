@@ -2,16 +2,16 @@ import { ArgumentsHost, Catch, ExceptionFilter, ForbiddenException, HttpExceptio
 import { Request, Response } from 'express';
 
 @Catch(HttpException)
-export class AuthExceptionFilter implements ExceptionFilter {
+export class LoginFailedExceptionFilter implements ExceptionFilter {
   catch(exception: HttpException, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
     const request = ctx.getRequest<Request>();
 
     if (
-      exception instanceof ForbiddenException
+      exception instanceof UnauthorizedException
     ) {
-      request.flash('alert', 'Please login then try again!');
+      request.flash('alert', 'Wrong email / password. Please try again!');
       response.redirect('/login')
     } else {
       response.redirect('/404')

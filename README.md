@@ -17,7 +17,7 @@ To Do:
 - [x] User can logout
 - [x] Redirect if visiting authenticated routes
 - [ ] Render if failed to create user
-- [ ] Render if login failed
+- [x] Render if login failed
 
 Uncertainties:
 - Haven't decided where is the best place to implement mappers a.k.a. `toUserDto`

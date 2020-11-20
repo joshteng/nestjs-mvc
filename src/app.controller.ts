@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Render, Request, Res, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Render, Request, Res, UseFilters, UseGuards } from '@nestjs/common';
 import { Response } from 'express';
 import { AppService } from './app.service';
 import { LoginGuard } from './common/guards/login.guard';
+import { LoginFailedExceptionFilter } from './common/filters/login-failed-exceptions.filters';
 
 @Controller()
 export class AppController {
@@ -31,6 +32,7 @@ export class AppController {
   }
 
   @UseGuards(LoginGuard)
+  @UseFilters(LoginFailedExceptionFilter)
   @Post('/login')
   login(@Request() req, @Res() res: Response) {
     res.redirect(`/users/${req.user.id}`);
