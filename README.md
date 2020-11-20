@@ -7,11 +7,12 @@ Setup:
 - [x] Set up validation pipeline & class-transformer & class-validator
 - [x] Set up express-session
 - [x] CSRF to forms https://expressjs.com/en/resources/middleware/csurf.html
+- [x] Flash messages
 
 To Do:
 - [x] User can sign up with basic validation
 - [x] Password should not be returned post creating user (use a DTO to dictate the return value)
-- [x] Should display friendly message if duplicate email used when creating user
+- [x] Should display friendly message if duplicate email used when creating user or when validation fails for non-conforming data
 - [x] User can login
 - [x] User automatically logged in after creation
 - [x] User can logout
