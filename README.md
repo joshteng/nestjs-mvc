@@ -14,7 +14,7 @@ To Do:
 - [x] Should display friendly message if duplicate email used when creating user
 - [x] User can login
 - [x] User automatically logged in after creation
-- [ ] User can logout
+- [x] User can logout
 - [ ] Redirect if visiting authenticated routes
 - [ ] Render if failed to create user
 - [ ] Render if login failed

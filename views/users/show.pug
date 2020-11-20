@@ -1,0 +1,6 @@
+extends ../layouts/base.pug
+
+block content
+  h1 Welcome Back #{user.email}
+  form#logout(action="/logout", method="POST")
+    button.btn.btn-primary(type='submit') Logout

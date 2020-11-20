@@ -1,4 +1,6 @@
 extends ../layouts/base.pug
 
 block content
-  h1 Hello World #{user.email}
+  h1 Hello World
+  a(href="/login", class="btn btn-primary") Login
+  a(href="/sign-up", class="btn btn-warning") Sign Up

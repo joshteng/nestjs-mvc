@@ -1,4 +1,5 @@
-import { Body, Controller, Logger, Post, Request, Res } from '@nestjs/common';
+import { Body, Controller, Get, Logger, Param, Post, Render, Request, Res, UseGuards } from '@nestjs/common';
+import { AuthenticatedGuard } from 'src/common/guards/authenticated.guard';
 import { toUserDto } from 'src/common/mapper';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UsersService } from './users.service';
@@ -22,6 +23,15 @@ export class UsersController {
       })
     }
 
-    res.redirect('/')
+    res.redirect(`/users/${user.id}`)
+  }
+
+  @UseGuards(AuthenticatedGuard)
+  @Get(':id')
+  @Render('users/show')
+  async profile(@Request() req, @Param() param) {
+    if (req.user.id == param.id) {
+      return { user: req.user }
+    }
   }
 }
