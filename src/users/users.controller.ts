@@ -35,7 +35,10 @@ export class UsersController {
   @Render('users/show')
   async profile(@Request() req, @Param() param) {
     if (req.user.id == param.id) {
-      return { user: req.user, csrfToken: req.csrfToken() }
+      return {
+        user: req.user,
+        // csrfToken: req.csrfToken()
+      }
     }
   }
 }

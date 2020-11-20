@@ -6,6 +6,8 @@ import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
+import { APP_INTERCEPTOR } from '@nestjs/core';
+import { FlashMessageCsrfInterceptor } from './common/interceptors/flash_message_csrf.interceptor';
 
 @Module({
   imports: [
@@ -24,7 +26,10 @@ import { AuthModule } from './auth/auth.module';
     AuthModule
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, {
+    provide: APP_INTERCEPTOR,
+    useClass: FlashMessageCsrfInterceptor
+  }],
 })
 
 export class AppModule { }

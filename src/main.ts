@@ -9,6 +9,7 @@ import flash = require('connect-flash');
 import * as passport from 'passport';
 import * as csurf from 'csurf';
 import * as bodyParser from 'body-parser';
+import { FlashMessageCsrfInterceptor } from './common/interceptors/flash_message_csrf.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -27,6 +28,8 @@ async function bootstrap() {
       }
     })
   )
+
+  // app.useGlobalInterceptors(FlashMessageCsrfInterceptor)
 
   app.use(
     session({

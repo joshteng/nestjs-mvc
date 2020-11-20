@@ -18,7 +18,7 @@ To Do:
 - [x] Redirect if visiting authenticated routes
 - [x] Render if failed to create user
 - [x] Render if login failed
-- [ ] Use Interceptor to add flashMessages and csrfToken to every response
+- [x] Use Interceptor to add flashMessages and csrfToken to every response
 
 Uncertainties:
 - Haven't decided where is the best place to implement mappers a.k.a. `toUserDto`

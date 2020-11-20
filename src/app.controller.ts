@@ -18,7 +18,7 @@ export class AppController {
   @Render('users/new')
   signUp(@Request() req): object {
     return {
-      csrfToken: req.csrfToken(),
+      // csrfToken: req.csrfToken(),
       pageTitle: "Sign Up"
     }
   }
@@ -27,9 +27,9 @@ export class AppController {
   @Render('public/login')
   loginPage(@Request() req) {
     return {
-      csrfToken: req.csrfToken(),
+      // csrfToken: req.csrfToken(),
       pageTitle: "Login",
-      flashMessage: req.flash('alert')[0]
+      // flashMessage: req.flash('alert')[0]
     }
   }
 
