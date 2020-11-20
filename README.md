@@ -16,7 +16,7 @@ To Do:
 - [x] User automatically logged in after creation
 - [x] User can logout
 - [x] Redirect if visiting authenticated routes
-- [ ] Render if failed to create user
+- [x] Render if failed to create user
 - [x] Render if login failed
 
 Uncertainties:
