@@ -24,3 +24,13 @@ To Do:
 Uncertainties:
 - Haven't decided where is the best place to implement mappers a.k.a. `toUserDto`
 - Any way to make `toUserDto` more generic and reusable
+
+New Lessons for me:
+1. Use guards to perform login
+2. Use guards to perform authorization
+3. Use exception filters to improve user experience by redirecting when fail to login or when visting unauthorized routes
+4. Use exception filters to improve UX when user sign up fails by rendering the sign up form page with error messages
+5. Use flash messages
+6. Use CSRF
+7. Use passport.js together with express-session for a "username" / password local strategy
+8. Use global interceptors in app module to inject csrftoken and flash message to every route handler
