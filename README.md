@@ -12,8 +12,12 @@ To Do:
 - [x] User can sign up with basic validation
 - [x] Password should not be returned post creating user (use a DTO to dictate the return value)
 - [x] Should display friendly message if duplicate email used when creating user
-- [ ] User can login
-- [ ] User automatically logged in after creation
+- [x] User can login
+- [x] User automatically logged in after creation
+- [ ] User can logout
+- [ ] Redirect if visiting authenticated routes
+- [ ] Render if failed to create user
+- [ ] Render if login failed
 
 Uncertainties:
 - Haven't decided where is the best place to implement mappers a.k.a. `toUserDto`

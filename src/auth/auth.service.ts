@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { compare } from 'bcrypt';
+import { toUserDto } from 'src/common/mapper';
 import { User } from 'src/users/entities/user.entity';
 import { UsersService } from 'src/users/users.service';
 
@@ -11,7 +12,7 @@ export class AuthService {
     const user = await this.usersService.findUserByEmail(email)
 
     if (user && await this.isCorrectPassword(user, password)) {
-      return user
+      return toUserDto(user)
     }
 
     return null

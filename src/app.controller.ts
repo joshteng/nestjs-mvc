@@ -1,6 +1,5 @@
-import { Controller, Get, Post, Render, Req, Request, Res, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Render, Request, Res, UseGuards } from '@nestjs/common';
 import { Response } from 'express';
-import { userInfo } from 'os';
 import { AppService } from './app.service';
 import { AuthenticatedGuard } from './common/guards/authenticated.guard';
 import { LoginGuard } from './common/guards/login.guard';
@@ -16,7 +15,7 @@ export class AppController {
     return { user: req.user }
   }
 
-  @Get('sign_up')
+  @Get('sign-up')
   @Render('users/new')
   signUp(): object {
     return {
